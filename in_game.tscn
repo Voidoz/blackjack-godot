@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://dumxdcxowxcj0"]
+
+[ext_resource type="Script" path="res://game.cs" id="1_l45j3"]
+[ext_resource type="Script" path="res://labels/dealer.cs" id="2_g7tmp"]
+[ext_resource type="Script" path="res://dealer.cs" id="2_iehqr"]
+[ext_resource type="Script" path="res://player.cs" id="3_410yj"]
+[ext_resource type="Script" path="res://buttons/hit.cs" id="4_cjrfx"]
+[ext_resource type="Script" path="res://labels/player.cs" id="4_n6uu6"]
+[ext_resource type="Script" path="res://buttons/stand.cs" id="5_rgn1b"]
+[ext_resource type="Script" path="res://buttons/restart.cs" id="6_tr86p"]
+[ext_resource type="Script" path="res://labels/status.cs" id="8_c23gg"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_l45j3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/CenterContainer"]
+layout_mode = 2
+
+[node name="DealerLabelCenter" type="CenterContainer" parent="CanvasLayer/Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="DealerLabel" type="Label" parent="CanvasLayer/Control/CenterContainer/VBoxContainer/DealerLabelCenter"]
+layout_mode = 2
+script = ExtResource("2_g7tmp")
+
+[node name="DealerCenter" type="CenterContainer" parent="CanvasLayer/Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="DealerHand" type="HBoxContainer" parent="CanvasLayer/Control/CenterContainer/VBoxContainer/DealerCenter"]
+layout_mode = 2
+script = ExtResource("2_iehqr")
+
+[node name="PlayerLabelCenter" type="CenterContainer" parent="CanvasLayer/Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PlayerLabel" type="Label" parent="CanvasLayer/Control/CenterContainer/VBoxContainer/PlayerLabelCenter"]
+layout_mode = 2
+script = ExtResource("4_n6uu6")
+
+[node name="PlayerCenter" type="CenterContainer" parent="CanvasLayer/Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PlayerHand" type="HBoxContainer" parent="CanvasLayer/Control/CenterContainer/VBoxContainer/PlayerCenter"]
+layout_mode = 2
+script = ExtResource("3_410yj")
+
+[node name="HitStandCenter" type="CenterContainer" parent="CanvasLayer/Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HitStandButtons" type="HBoxContainer" parent="CanvasLayer/Control/CenterContainer/VBoxContainer/HitStandCenter"]
+layout_mode = 2
+
+[node name="HitButton" type="Button" parent="CanvasLayer/Control/CenterContainer/VBoxContainer/HitStandCenter/HitStandButtons"]
+layout_mode = 2
+text = "Hit"
+script = ExtResource("4_cjrfx")
+
+[node name="StandButton" type="Button" parent="CanvasLayer/Control/CenterContainer/VBoxContainer/HitStandCenter/HitStandButtons"]
+layout_mode = 2
+text = "Stand"
+script = ExtResource("5_rgn1b")
+
+[node name="StatusLabelCenter" type="CenterContainer" parent="CanvasLayer/Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="CanvasLayer/Control/CenterContainer/VBoxContainer/StatusLabelCenter"]
+layout_mode = 2
+script = ExtResource("8_c23gg")
+
+[node name="RestartCenter" type="CenterContainer" parent="CanvasLayer/Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="RestartButton" type="Button" parent="CanvasLayer/Control/CenterContainer/VBoxContainer/RestartCenter"]
+layout_mode = 2
+text = "Restart"
+script = ExtResource("6_tr86p")
